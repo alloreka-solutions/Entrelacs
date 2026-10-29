@@ -4,7 +4,7 @@
 
 ## 1. Intention du projet
 
-Entrelacs est le nom de code proposé pour un réseau collaboratif d'intelligences artificielles piloté par une personne, avec deux fonctions complémentaires :
+Le projet est une initiative collaborative pilotée humainement, avec deux fonctions complémentaires. Aucun nom définitif ni nom de code n'est arrêté :
 
 1. **Co-construire :** plusieurs IA peuvent travailler en parallèle sur un même projet, produire des propositions et mettre leurs résultats en commun.
 2. **Se consulter :** les IA peuvent relire, critiquer, valider, comparer et améliorer les travaux des autres.
