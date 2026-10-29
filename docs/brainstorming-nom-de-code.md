@@ -1,4 +1,4 @@
-# Entrelacs — réflexion sur le nom de code
+# Réflexion ouverte sur le nom du projet
 
 **Statut :** note de brainstorming initiale, non constitutive d'une décision d'architecture.
 
@@ -11,11 +11,11 @@ Entrelacs est le nom de code proposé pour un réseau collaboratif d'intelligenc
 
 Le socle initial envisagé est un dépôt GitHub partagé contenant documentation, prompts, procédures et conventions de collaboration. Une application d'orchestration pourrait venir ensuite. Le dépôt doit donc rester utile avant l'existence de cette application.
 
-## 2. Pourquoi « Entrelacs » ?
+## 2. Pistes de noms à examiner
 
-Un entrelacs est constitué d'éléments distincts qui se croisent et se soutiennent pour former un ensemble cohérent.
+Les noms ci-dessous sont des pistes de discussion. Ils ne constituent ni un classement officiel ni une présélection fermée. Toute personne peut en proposer d'autres.
 
-Cette image représente les deux dimensions du projet :
+La piste « Entrelacs » peut évoquer les dimensions suivantes :
 
 - **Complémentarité :** chaque IA conserve ses capacités, son angle d'analyse et ses limites.
 - **Co-construction :** les contributions peuvent être combinées pour produire un résultat commun.
@@ -25,15 +25,11 @@ Cette image représente les deux dimensions du projet :
 
 Le nom décrit surtout une manière de coopérer, plutôt qu'une technologie particulière.
 
-## 3. Formule de travail
+## 3. Formules descriptives provisoires
 
-**ENTRELACS — Réseau collaboratif d'intelligences artificielles**
+**Initiative ouverte — coopération entre humains et intelligences artificielles**
 
-Proposition de signature interne :
-
-> Co-construire. Confronter. Enrichir.
-
-Ces éléments sont des propositions de travail, pas encore une identité de marque ni une décision irréversible.
+Cette formule décrit la démarche, mais ne constitue pas le nom du projet. Une signature éventuelle pourra également être proposée collectivement.
 
 ## 4. Autres noms examinés
 
@@ -48,7 +44,7 @@ Ces éléments sont des propositions de travail, pas encore une identité de mar
 | **Cercleliance** | Cercle de consultation et alliance | Met en avant l'examen collectif | Plus long et moins naturel à l'oral |
 | **Compléxion** | Complémentarité + connexion | Évoque l'assemblage de capacités différentes | Peut être confondu avec « complexion » ou « complexité » |
 
-Les pistes déjà explorées avant cette note incluent également : **Confluence, Ruche, Essaim, Symbiose, Tissages et Cortex collectif**.
+Les pistes déjà explorées incluent également : **Confluence, Ruche, Essaim, Symbiose, Tissages et Cortex collectif**.
 
 ## 5. Comparaison synthétique
 
@@ -63,13 +59,9 @@ Les pistes déjà explorées avant cette note incluent également : **Confluence
 
 Évaluation qualitative de brainstorming, et non mesure objective.
 
-## 6. Recommandation provisoire
+## 6. Pas de favori arrêté
 
-**Favori : Entrelacs.**
-
-Il couvre mieux les deux usages que le projet veut réunir : produire ensemble et s'améliorer par confrontation constructive. Il reste pertinent si le système évolue vers une combinaison d'IA, d'outils, de procédures et de contributions humaines.
-
-**Alternative si la dimension IA doit être immédiatement visible : ConfluIA.**
+Aucun nom n'est recommandé comme choix officiel à ce stade. Les pistes doivent pouvoir être comparées à égalité, amendées, écartées ou complétées par de nouvelles propositions. Une consultation ouverte et un vote indicatif peuvent aider à faire émerger les préférences, sans remplacer l'examen de la disponibilité juridique, des noms de domaine, de la prononciation, de l'accessibilité et des éventuelles ambiguïtés.
 
 ## 7. Principes à préserver dans la suite du projet
 
@@ -93,3 +85,10 @@ Il couvre mieux les deux usages que le projet veut réunir : produire ensemble e
 ---
 
 *Note initiale destinée à ouvrir la réflexion. Les noms alternatifs et les principes proposés restent discutables et peuvent être amendés au fil du projet.*
+
+
+## 9. Consultation collective
+
+Une première interface expérimentale permet de proposer librement un nom et de voter pour une proposition. Les votes sont indicatifs et le mécanisme actuel repose sur une session de navigateur : il ne garantit pas un vote unique par personne. Le résultat ne doit donc pas être présenté comme un scrutin vérifié ni comme une décision automatique.
+
+La liste de départ est ouverte. Les propositions nouvelles sont aussi légitimes que les noms déjà présents dans cette note.
