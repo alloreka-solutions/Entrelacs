@@ -96,22 +96,40 @@ try {
                 throw new InvalidArgumentException('Cette proposition n’est plus disponible au vote.');
             }
 
-            $vote = $db->prepare(
-                'INSERT INTO project_name_votes
-                    (voter_token, proposal_id, created_at, updated_at)
-                 VALUES (:token, :proposal_id, :created_at, :updated_at)
-                 ON CONFLICT(voter_token) DO UPDATE SET
-                    proposal_id = excluded.proposal_id,
-                    updated_at = excluded.updated_at'
-            );
+            $now = gmdate('Y-m-d\\TH:i:s\\Z');
+            $token = $_SESSION['name_vote_token'];
 
-            $now = gmdate('Y-m-d\TH:i:s\Z');
-            $vote->execute(array(
-                ':token' => $_SESSION['name_vote_token'],
-                ':proposal_id' => $proposalId,
-                ':created_at' => $now,
-                ':updated_at' => $now
-            ));
+            // UPDATE puis INSERT évite de dépendre de la syntaxe UPSERT
+            // introduite dans les versions récentes de SQLite.
+            $existingVote = $db->prepare(
+                'SELECT voter_token FROM project_name_votes WHERE voter_token = :token'
+            );
+            $existingVote->execute(array(':token' => $token));
+
+            if ($existingVote->fetch()) {
+                $vote = $db->prepare(
+                    'UPDATE project_name_votes
+                     SET proposal_id = :proposal_id, updated_at = :updated_at
+                     WHERE voter_token = :token'
+                );
+                $vote->execute(array(
+                    ':proposal_id' => $proposalId,
+                    ':updated_at' => $now,
+                    ':token' => $token
+                ));
+            } else {
+                $vote = $db->prepare(
+                    'INSERT INTO project_name_votes
+                        (voter_token, proposal_id, created_at, updated_at)
+                     VALUES (:token, :proposal_id, :created_at, :updated_at)'
+                );
+                $vote->execute(array(
+                    ':token' => $token,
+                    ':proposal_id' => $proposalId,
+                    ':created_at' => $now,
+                    ':updated_at' => $now
+                ));
+            }
 
             $message = 'Votre vote a été enregistré. Vous pouvez le modifier à tout moment.';
         } else {
