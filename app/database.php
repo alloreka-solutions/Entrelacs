@@ -58,7 +58,10 @@ function app_apply_migrations($db)
 
 function app_database()
 {
-    $databasePath = dirname(__DIR__) . '/storage/database/app.sqlite';
+    $configuredPath = getenv('ENTRELACS_DB_PATH');
+    $databasePath = is_string($configuredPath) && $configuredPath !== ''
+        ? $configuredPath
+        : dirname(__DIR__) . '/storage/database/app.sqlite';
     $directory = dirname($databasePath);
 
     if (!is_dir($directory)) {

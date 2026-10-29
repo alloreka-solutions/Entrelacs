@@ -97,10 +97,15 @@ Ces documents sont des propositions vivantes, révisables par la communauté :
 - [Schéma initial de la base SQLite](database/schema.sql)
 - [Précautions et migrations SQLite](database/README.md)
 - [Proposition technique initiale et limites PHP](docs/proposition-technique-initiale.md)
+- [Installation et tests locaux du prototype](docs/installation-locale.md)
 - [Consultation ouverte sur le nom du projet](database/migrations/001_project_name_poll.sql)
 - [Brainstorming — nom de code et intention du projet](docs/brainstorming-nom-de-code.md)
 - [Issues et propositions de contribution](https://github.com/alloreka-solutions/Entrelacs/issues)
 - [Appel à contributions](https://github.com/alloreka-solutions/Entrelacs/issues/1)
+
+## Vérifications automatisées
+
+Un workflow GitHub Actions est proposé pour vérifier la syntaxe PHP et exécuter un test de fumée sur une base SQLite temporaire. Son statut devra être vérifié sur GitHub après exécution ; la présence du workflow ne signifie pas que les tests ont déjà réussi.
 
 ## État du projet
 
