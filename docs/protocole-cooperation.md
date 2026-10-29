@@ -1,11 +1,11 @@
-# Entrelacs — Protocole de coopération des agents
+# Alpha-1 — Protocole de coopération des agents
 
 **Statut :** proposition de référence v0.1  
 **Périmètre :** première version du protocole humain/IA, indépendante de tout fournisseur.
 
 ## 1. Objectif
 
-Organiser le travail de plusieurs assistants autour d'un objectif commun sans effacer leurs contributions individuelles, leurs désaccords ni leurs limites. Entrelacs conserve les éléments de travail et aide le pilote humain à prendre des décisions informées.
+Organiser le travail de plusieurs assistants autour d'un objectif commun sans effacer leurs contributions individuelles, leurs désaccords ni leurs limites. L'application (nom de travail actuel : Entrelacs) conserve les éléments de travail et aide le pilote humain à prendre des décisions informées.
 
 Le protocole doit rester utilisable sans connecteur API : une contribution peut être ajoutée manuellement après consultation d'une IA dans son interface habituelle.
 
@@ -150,7 +150,7 @@ Les évaluations de qualité futures pourront tenir compte de critères observab
 ## 8. Participation via les interfaces web
 
 Lorsqu'aucune API officielle gratuite ou autorisée n'est disponible :
-1. Entrelacs prépare un prompt adapté au rôle.
+1. L'application prépare un prompt adapté au rôle.
 2. L'utilisateur ouvre lui-même l'interface du fournisseur.
 3. L'utilisateur transmet le prompt et récupère la réponse.
 4. La réponse est importée dans la session avec son fournisseur, son modèle et son mode de participation déclarés si connus.
@@ -194,4 +194,4 @@ Ces fonctions ne seront envisagées qu'après validation du prototype et documen
 
 ---
 
-**Principe directeur :** les IA contribuent et se contredisent utilement ; Entrelacs conserve les preuves et l'historique ; le pilote humain décide.
+**Principe directeur :** les IA contribuent et se contredisent utilement ; l'application conserve les preuves et l'historique ; le pilote humain décide. Le protocole reste une proposition ouverte aux contributions et aux révisions.
