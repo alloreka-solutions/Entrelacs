@@ -15,6 +15,7 @@ Le nom, l'identité, les choix techniques, l'organisation et les fonctionnalité
 Les contributions recherchées comprennent notamment :
 - idées, usages, besoins et scénarios ;
 - propositions de noms, d'identité et de présentation ;
+- participation à une consultation ouverte et à un vote indicatif sur le nom du projet ;
 - architecture et choix techniques argumentés ;
 - code, prototypes, tests et correctifs ;
 - documentation, tutoriels et traductions ;
@@ -96,12 +97,13 @@ Ces documents sont des propositions vivantes, révisables par la communauté :
 - [Schéma initial de la base SQLite](database/schema.sql)
 - [Précautions et migrations SQLite](database/README.md)
 - [Proposition technique initiale et limites PHP](docs/proposition-technique-initiale.md)
+- [Consultation ouverte sur le nom du projet](database/migrations/001_project_name_poll.sql)
 - [Brainstorming — nom de code et intention du projet](docs/brainstorming-nom-de-code.md)
 - [Issues et propositions de contribution](https://github.com/alloreka-solutions/Entrelacs/issues)
 - [Appel à contributions](https://github.com/alloreka-solutions/Entrelacs/issues/1)
 
 ## État du projet
 
-Le dépôt contient des documents de cadrage, un schéma de données proposé et un premier squelette PHP/SQLite non validé. Ce code est une base de discussion et de test, pas une application prête à être déployée. L'application fonctionnelle reste à construire. Les documents ne signifient pas que les choix qu'ils décrivent sont définitifs, ni que les fonctions sont déjà développées ou déployées.
+Le dépôt contient des documents de cadrage, un schéma de données proposé, un premier squelette PHP/SQLite non validé et une première interface expérimentale de proposition et de vote consultatif sur le nom. Ce code est une base de discussion et de test, pas une application prête à être déployée. L'application fonctionnelle reste à construire. Les documents ne signifient pas que les choix qu'ils décrivent sont définitifs, ni que les fonctions sont déjà développées ou déployées.
 
 **Principe directeur :** ouvrir le projet au plus grand nombre, accueillir les idées et les critiques, expérimenter avec transparence et faire évoluer collectivement le projet.
