@@ -1,0 +1,11 @@
+/var/*
+!/var/.gitkeep
+.env
+.env.*
+!.env.example
+*.sqlite
+*.sqlite3
+*.db
+*.log
+/vendor/
+/.DS_Store
