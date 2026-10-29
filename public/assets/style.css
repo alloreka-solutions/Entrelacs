@@ -5,9 +5,7 @@
     background: #f4f6f8;
 }
 
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
     margin: 0;
@@ -21,7 +19,10 @@ body {
 }
 
 header,
-.session {
+.session,
+.proposal,
+.proposal-form-section,
+.voting-note {
     padding: 24px;
     background: #fff;
     border: 1px solid #dce2e8;
@@ -35,15 +36,42 @@ header,
     letter-spacing: 0.08em;
 }
 
-h1,
-h2,
-h3 {
-    line-height: 1.2;
+h1, h2, h3 { line-height: 1.2; }
+
+.intro { max-width: 68ch; }
+
+.proposal-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 14px;
 }
 
-.session {
-    margin: 16px 0;
+.proposal {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
+
+.proposal-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.proposal-heading h3 { margin: 0; }
+
+.vote-count {
+    color: #52657a;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.vote-form { margin-top: auto; }
+
+.proposal-form-section,
+.voting-note,
+.session { margin-top: 20px; }
 
 label {
     display: block;
@@ -51,14 +79,18 @@ label {
     font-weight: 600;
 }
 
+input[type="text"],
 textarea {
     display: block;
     width: 100%;
-    min-height: 130px;
     padding: 12px;
     border: 1px solid #aeb9c5;
     border-radius: 8px;
     font: inherit;
+}
+
+textarea {
+    min-height: 110px;
     resize: vertical;
 }
 
@@ -73,8 +105,12 @@ button {
     cursor: pointer;
 }
 
-button:hover {
-    background: #19446d;
+button:hover { background: #19446d; }
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #93bce2;
+    outline-offset: 2px;
 }
 
 .notice {
@@ -82,6 +118,12 @@ button:hover {
     border-left: 4px solid #527da5;
     background: #e8f0f7;
 }
+
+.voting-note {
+    background: #f8fafc;
+}
+
+.voting-note ul { padding-left: 22px; }
 
 footer {
     margin-top: 32px;
@@ -96,7 +138,10 @@ footer {
     }
 
     header,
-    .session {
+    .session,
+    .proposal,
+    .proposal-form-section,
+    .voting-note {
         padding: 18px;
     }
 }
