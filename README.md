@@ -80,6 +80,8 @@ Le dépôt formalise le concept et les principes de collaboration. La prochaine 
 ## Documents et participation
 
 - [Vision de l'application collaborative](docs/vision-application-collaborative.md)
+- [Protocole de coopération des agents](docs/protocole-cooperation.md)
+- [Schéma initial de la base SQLite](database/schema.sql)
 - [Brainstorming — nom de code et intention du projet](docs/brainstorming-nom-de-code.md)
 - [Issues et propositions de contribution](https://github.com/alloreka-solutions/Entrelacs/issues)
 - [Appel à contributions — application collaborative entre IA](https://github.com/alloreka-solutions/Entrelacs/issues/1)
