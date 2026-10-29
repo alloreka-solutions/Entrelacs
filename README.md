@@ -1,10 +1,10 @@
-# Alpha-1 — projet collaboratif ouvert autour des intelligences artificielles
+# Initiative ouverte — coopération entre humains et intelligences artificielles
 
-**Nom de code actuel :** Alpha-1  
-**Nom de travail utilisé dans le dépôt :** Entrelacs (provisoire, non adopté définitivement)  
+**Appellation descriptive actuelle :** Initiative ouverte  
+**Nom du dépôt GitHub :** Entrelacs (repère technique provisoire, non adopté comme nom définitif)  
 **Nom définitif :** ouvert aux propositions de la communauté.
 
-Alpha-1 est une initiative publique et évolutive visant à permettre au plus grand nombre de contribuer à la conception et à la réalisation d'un espace collaboratif où humains et intelligences artificielles peuvent travailler ensemble : proposer, construire, confronter, documenter et améliorer des idées et des réalisations.
+Cette initiative publique et évolutive visant à permettre au plus grand nombre de contribuer à la conception et à la réalisation d'un espace collaboratif où humains et intelligences artificielles peuvent travailler ensemble : proposer, construire, confronter, documenter et améliorer des idées et des réalisations.
 
 Le nom, l'identité, les choix techniques, l'organisation et les fonctionnalités ne sont pas figés. Ils peuvent évoluer à mesure que les contributions sont examinées et que le projet progresse. Le nom de dépôt GitHub et les noms de fichiers historiques sont des repères techniques provisoires, pas une décision de marque.
 
@@ -94,12 +94,14 @@ Ces documents sont des propositions vivantes, révisables par la communauté :
 - [Vision de l'application collaborative](docs/vision-application-collaborative.md)
 - [Protocole de coopération des agents](docs/protocole-cooperation.md)
 - [Schéma initial de la base SQLite](database/schema.sql)
+- [Précautions et migrations SQLite](database/README.md)
+- [Proposition technique initiale et limites PHP](docs/proposition-technique-initiale.md)
 - [Brainstorming — nom de code et intention du projet](docs/brainstorming-nom-de-code.md)
 - [Issues et propositions de contribution](https://github.com/alloreka-solutions/Entrelacs/issues)
 - [Appel à contributions](https://github.com/alloreka-solutions/Entrelacs/issues/1)
 
 ## État du projet
 
-Le dépôt contient actuellement des documents de cadrage et un premier schéma de données proposé. L'application fonctionnelle reste à construire. Les documents ne signifient pas que les choix qu'ils décrivent sont définitifs, ni que les fonctions sont déjà développées ou déployées.
+Le dépôt contient des documents de cadrage, un schéma de données proposé et un premier squelette PHP/SQLite non validé. Ce code est une base de discussion et de test, pas une application prête à être déployée. L'application fonctionnelle reste à construire. Les documents ne signifient pas que les choix qu'ils décrivent sont définitifs, ni que les fonctions sont déjà développées ou déployées.
 
 **Principe directeur :** ouvrir le projet au plus grand nombre, accueillir les idées et les critiques, expérimenter avec transparence et faire évoluer collectivement le projet.
