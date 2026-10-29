@@ -44,6 +44,9 @@ try {
          VALUES (:token, :proposal, :created, :updated)'
     );
     $now = gmdate('Y-m-d\\TH:i:s\\Z');
+    if (preg_match('/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$/', $now) !== 1) {
+        throw new RuntimeException('Timestamp must be valid UTC ISO 8601.');
+    }
     $vote->execute(array(
         ':token' => bin2hex(random_bytes(16)),
         ':proposal' => $proposalId,
@@ -66,6 +69,12 @@ try {
     )->fetchColumn();
     if ($migrationCount !== 1) {
         throw new RuntimeException('Migration idempotency check failed.');
+    }
+    $persistedVoteCount = (int) $db->query(
+        'SELECT COUNT(*) FROM project_name_votes WHERE proposal_id = ' . $db->quote($proposalId)
+    )->fetchColumn();
+    if ($persistedVoteCount !== 1) {
+        throw new RuntimeException('The vote did not persist after reopening the database.');
     }
 
     echo "OK: SQLite connection, initial migration, foreign-key relation and persistence.\n";
