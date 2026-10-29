@@ -35,7 +35,7 @@ try {
         ':id' => $proposalId,
         ':name' => 'Test ' . bin2hex(random_bytes(4)),
         ':description' => 'Proposition de test',
-        ':submitted_at' => gmdate('Y-m-d\\TH:i:s\\Z'),
+        ':submitted_at' => gmdate('Y-m-d\TH:i:s\Z'),
         ':status' => 'open'
     ));
 
@@ -43,7 +43,7 @@ try {
         'INSERT INTO project_name_votes (voter_token, proposal_id, created_at, updated_at)
          VALUES (:token, :proposal, :created, :updated)'
     );
-    $now = gmdate('Y-m-d\\TH:i:s\\Z');
+    $now = gmdate('Y-m-d\TH:i:s\Z');
     if (preg_match('/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$/', $now) !== 1) {
         throw new RuntimeException('Timestamp must be valid UTC ISO 8601.');
     }
