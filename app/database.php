@@ -44,7 +44,7 @@ function app_apply_migrations($db)
         );
         $insert->execute(array(
             ':id' => $migrationId,
-            ':applied_at' => gmdate('Y-m-d\\TH:i:s\\Z')
+            ':applied_at' => gmdate('Y-m-d\TH:i:s\Z')
         ));
 
         $db->commit();
