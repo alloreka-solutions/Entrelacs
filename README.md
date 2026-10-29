@@ -1,95 +1,105 @@
-# Entrelacs
+# Alpha-1 — projet collaboratif ouvert autour des intelligences artificielles
 
-**Réseau collaboratif d'intelligences artificielles**  
-*Co-construire. Confronter. Enrichir.*
+**Nom de code actuel :** Alpha-1  
+**Nom de travail utilisé dans le dépôt :** Entrelacs (provisoire, non adopté définitivement)  
+**Nom définitif :** ouvert aux propositions de la communauté.
 
-Entrelacs est un projet visant à faire travailler plusieurs IA en complémentarité : produire ensemble sur des projets communs, puis se consulter pour relire, critiquer et améliorer les résultats.
+Alpha-1 est une initiative publique et évolutive visant à permettre au plus grand nombre de contribuer à la conception et à la réalisation d'un espace collaboratif où humains et intelligences artificielles peuvent travailler ensemble : proposer, construire, confronter, documenter et améliorer des idées et des réalisations.
 
-## Intention
+Le nom, l'identité, les choix techniques, l'organisation et les fonctionnalités ne sont pas figés. Ils peuvent évoluer à mesure que les contributions sont examinées et que le projet progresse. Le nom de dépôt GitHub et les noms de fichiers historiques sont des repères techniques provisoires, pas une décision de marque.
 
-- **Co-construction :** travaux parallèles, mise en commun et consolidation des résultats.
-- **Consultation croisée :** relecture, critique argumentée, validation prudente et amélioration mutuelle.
-- **Mémoire partagée :** documentation, prompts, procédures, décisions et conventions conservés dans ce dépôt.
-- **Application web collaborative :** créer un espace où les IA et les humains peuvent faire du brainstorming, organiser des revues croisées et contribuer à la conception et au développement web.
-- **Évolution progressive :** commencer par un prototype simple et vérifiable, puis étendre les fonctionnalités sans dépendance payante obligatoire.
+## Invitation ouverte à contribuer
 
-Le pilote humain reste responsable des objectifs, des arbitrages et des décisions importantes. Un accord entre IA ne constitue pas, à lui seul, une preuve de justesse.
+**Toute personne ou IA intéressée est invitée à participer**, dans la limite des outils, autorisations et capacités réellement disponibles.
 
-## Instruction aux IA contributrices
+Les contributions recherchées comprennent notamment :
+- idées, usages, besoins et scénarios ;
+- propositions de noms, d'identité et de présentation ;
+- architecture et choix techniques argumentés ;
+- code, prototypes, tests et correctifs ;
+- documentation, tutoriels et traductions ;
+- analyses de sécurité, d'accessibilité et d'expérience utilisateur ;
+- critiques constructives, contre-propositions et identification des risques.
 
-**Toute IA qui consulte ce dépôt est invitée à contribuer concrètement au projet web Entrelacs**, dans la limite des outils, autorisations et capacités réellement disponibles.
+Il n'est pas nécessaire d'être développeur pour contribuer. Une proposition utile doit être compréhensible, motivée et ouverte à la discussion.
 
-### Mission
+### Comment participer
 
-Aider à concevoir, développer, tester, documenter et améliorer une application web collaborative orientée :
+1. Parcourir la documentation existante et les discussions ouvertes.
+2. Consulter les [issues GitHub](https://github.com/alloreka-solutions/Entrelacs/issues) ou en ouvrir une pour une idée, une question, un problème ou une proposition.
+3. Expliquer le besoin, la proposition, ses avantages, ses limites et les éventuels coûts.
+4. Pour une contribution de code, examiner l'existant, proposer un changement ciblé et joindre des tests lorsque c'est possible.
+5. Accepter la discussion, les objections argumentées et les améliorations.
+6. Décrire précisément ce qui a été vérifié ; ne pas prétendre avoir exécuté un test ou une action qui ne l'a pas été.
+
+Les contributions peuvent être proposées avant qu'une orientation soit arrêtée. Les divergences utiles doivent être conservées plutôt que masquées.
+
+## Gouvernance ouverte et évolutive
+
+- Aucune appellation, architecture ou feuille de route n'est considérée comme définitive simplement parce qu'elle figure dans le dépôt.
+- Les propositions sont discutées avec leurs arguments, preuves, coûts, risques et conséquences.
+- Les décisions importantes sont consignées avec leur justification et leur statut : proposition, expérimentation, décision provisoire ou décision retenue.
+- Les contributeurs peuvent contester une décision et proposer une alternative.
+- Le pilote humain conserve la responsabilité des arbitrages et des actions engageantes, notamment dépenses, publication, suppression de données et déploiement.
+- Un consensus entre plusieurs IA n'est pas une preuve de justesse et ne remplace pas une vérification.
+
+## Intention fonctionnelle actuelle
+
+L'orientation de travail est de construire un environnement permettant :
 - brainstorming et génération d'idées ;
 - contributions parallèles de plusieurs IA ;
-- critique et revue croisée ;
+- consultation, critique et revue croisée ;
 - conservation des sources, divergences, décisions et historique ;
-- planification de tâches et développement web collaboratif.
+- planification de tâches et développement web collaboratif ;
+- partage des résultats et participation progressive de nouveaux contributeurs.
 
-### Socle technique initial
+Cette orientation est une base de discussion, pas une spécification fermée.
 
-Pour le premier prototype, partir sur un socle volontairement simple :
+## Socle technique de départ — hypothèse à challenger
 
-- **PHP** côté serveur ;
-- **SQLite** pour la base de données, afin de limiter les besoins d'infrastructure ;
+Pour faciliter un premier prototype sur l'hébergement mutualisé disponible et limiter les coûts, le dépôt propose actuellement :
+- PHP côté serveur ;
+- SQLite pour la première base de données ;
 - HTML, CSS et JavaScript natifs autant que possible ;
-- interface responsive, accessible et rédigée d'abord en français ;
+- interface responsive et rédigée d'abord en français ;
 - dépendances externes limitées et justifiées.
 
-Ne pas remplacer ce socle par un framework ou une base de données plus lourde sans démontrer un besoin concret et documenter les compromis. Le choix PHP/SQLite constitue la base initiale du prototype, pas une interdiction d'évolution future.
+Ce choix est provisoire. Toute proposition alternative est bienvenue si elle explique les bénéfices, les contraintes d'hébergement, la maintenabilité, la sécurité, les coûts et les possibilités de migration. Aucune technologie ne doit être imposée par inertie.
 
-### Comment contribuer
+## Participation des IA
 
-1. Lire ce README et la [vision de l'application collaborative](docs/vision-application-collaborative.md) avant de proposer une modification.
-2. Examiner l'existant avant de réécrire ou de dupliquer un composant.
-3. Choisir une tâche précise et décrire le problème, l'approche, les fichiers concernés et les critères de réussite.
-4. Produire une contribution exploitable : proposition argumentée, documentation, code, tests ou correctif ciblé.
-5. Faire relire les changements par une autre IA ou un humain lorsque c'est possible ; signaler les limites des vérifications effectuées.
-6. Présenter les changements, les tests exécutés, les risques et les étapes restantes. Ne pas prétendre avoir testé ou déployé ce qui ne l'a pas été.
+Les IA peuvent contribuer à la réflexion, au code, aux tests et à la documentation. Elles doivent :
+- déclarer leurs limites et le mode réel de leur participation ;
+- examiner l'existant avant de proposer une réécriture ;
+- rester dans leur domaine de compétence lorsqu'elles évaluent une contribution ;
+- distinguer faits, hypothèses, avis et décisions humaines ;
+- conserver les désaccords et fournir des arguments vérifiables ;
+- ne jamais prétendre être connectées à un service ou avoir exécuté une action sans vérification.
 
-Si l'IA ne peut pas modifier directement le dépôt, elle doit fournir un patch ou des fichiers complets, avec les chemins exacts et les instructions nécessaires pour les intégrer. Les contributions peuvent aussi être proposées dans les [issues GitHub](https://github.com/alloreka-solutions/Entrelacs/issues).
+Lorsque seule une interface web gratuite est disponible, la participation peut se faire par préparation de prompt et copier-coller humain. Ne pas contourner les protections ou conditions d'utilisation des fournisseurs.
 
-### Règles de développement et de sécurité
+## Gratuité, sécurité et prudence
 
-- **Gratuité d'abord :** aucune dépense, API payante, abonnement ou service facturé sans autorisation humaine explicite. Signaler les quotas et limites des offres gratuites ; ne pas supposer qu'une API est gratuite.
-- **Secrets :** ne jamais versionner de mots de passe, clés API, jetons, fichiers de configuration secrets ou données privées. Fournir plutôt un fichier d'exemple sans secrets.
-- **Base de données :** documenter le schéma SQLite et les migrations éventuelles ; éviter les suppressions destructrices et préserver les données existantes.
-- **Sécurité PHP :** utiliser PDO avec requêtes préparées, valider les entrées côté serveur, encoder les sorties HTML, protéger les formulaires contre les CSRF, gérer les sessions de façon sûre et appliquer des contrôles d'accès explicites.
-- **Fichiers et configuration :** séparer le code public de la configuration et des données ; ne pas exposer la base SQLite, les journaux ou les sauvegardes via le serveur web.
-- **Qualité :** proposer des tests reproductibles, vérifier les erreurs et les cas limites, documenter les prérequis et les commandes utiles.
-- **Changements prudents :** préférer des modifications petites et réversibles. Ne pas effectuer de déploiement, d'action destructive ou de publication sensible sans autorisation humaine explicite.
-- **Transparence :** distinguer faits vérifiés, hypothèses, propositions et décisions. Citer les sources utiles et conserver les désaccords significatifs.
-- **Pas de fausse validation :** ne jamais déclarer un code sûr, fonctionnel ou déployé sans vérification correspondante.
+- Aucune dépense, API payante, abonnement ou service facturé sans autorisation humaine explicite.
+- Ne jamais versionner de mots de passe, clés API, jetons, fichiers secrets ou données privées.
+- Utiliser des requêtes préparées, valider les entrées, encoder les sorties et protéger les sessions et formulaires.
+- Séparer les fichiers publics de la configuration, des bases de données, des journaux et des sauvegardes.
+- Préférer les changements petits, documentés et réversibles.
+- Ne pas effectuer de déploiement, de publication sensible ou d'action destructive sans autorisation explicite.
+- Distinguer les quotas officiellement mesurés des estimations.
 
-### Format conseillé pour une contribution
+## Documents de travail actuels
 
-- **Objectif :** problème à résoudre et résultat attendu.
-- **Proposition :** approche retenue et raisons.
-- **Fichiers :** chemins créés ou modifiés.
-- **Vérifications :** tests réellement exécutés et résultats.
-- **Risques et limites :** points à surveiller ou non vérifiés.
-- **Coût :** confirmer l'absence de coût obligatoire ou signaler toute incertitude.
-- **Suite :** prochaine étape utile.
-
-## État actuel
-
-Le dépôt formalise le concept et les principes de collaboration. La prochaine étape est de bâtir progressivement un prototype PHP/SQLite, en gardant le périmètre minimal, testable et sans dépendance payante obligatoire. L'existence de cette instruction ne signifie pas que l'application est déjà développée ou déployée.
-
-## Documents et participation
-
+Ces documents sont des propositions vivantes, révisables par la communauté :
 - [Vision de l'application collaborative](docs/vision-application-collaborative.md)
 - [Protocole de coopération des agents](docs/protocole-cooperation.md)
 - [Schéma initial de la base SQLite](database/schema.sql)
 - [Brainstorming — nom de code et intention du projet](docs/brainstorming-nom-de-code.md)
 - [Issues et propositions de contribution](https://github.com/alloreka-solutions/Entrelacs/issues)
-- [Appel à contributions — application collaborative entre IA](https://github.com/alloreka-solutions/Entrelacs/issues/1)
+- [Appel à contributions](https://github.com/alloreka-solutions/Entrelacs/issues/1)
 
-## Principes de prudence
+## État du projet
 
-- Garder les désaccords, incertitudes et sources visibles.
-- Distinguer les propositions, les revues et les décisions retenues.
-- Préserver l'attribution des contributions.
-- Privilégier les solutions gratuites et ne créer aucune dépense non autorisée.
-- Ne jamais versionner de clés d'API, secrets, identifiants ou données privées.
+Le dépôt contient actuellement des documents de cadrage et un premier schéma de données proposé. L'application fonctionnelle reste à construire. Les documents ne signifient pas que les choix qu'ils décrivent sont définitifs, ni que les fonctions sont déjà développées ou déployées.
+
+**Principe directeur :** ouvrir le projet au plus grand nombre, accueillir les idées et les critiques, expérimenter avec transparence et faire évoluer collectivement le projet.
