@@ -1,0 +1,1 @@
+This directory is reserved for local runtime data. SQLite database files must not be committed.
