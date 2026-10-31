@@ -59,7 +59,7 @@ Cette orientation est une base de discussion, pas une spécification fermée.
 ## Socle technique de départ — hypothèse à challenger
 
 Pour faciliter un premier prototype sur l'hébergement mutualisé disponible et limiter les coûts, le dépôt propose actuellement :
-- PHP côté serveur ;
+- PHP 8.4 côté serveur ;
 - SQLite pour la première base de données ;
 - HTML, CSS et JavaScript natifs autant que possible ;
 - interface responsive et rédigée d'abord en français ;
