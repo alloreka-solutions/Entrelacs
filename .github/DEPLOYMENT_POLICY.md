@@ -46,8 +46,8 @@ bash scripts/agent-deploy.sh <project_id> preview
 
 Création des jetons depuis la racine de l'installation Deployer, via PHP CLI :
 ```bash
-php8.4 bin/agent-api-token.php create "Agent preview" "status:read,deploy:preview" "<project_id>"
-php8.4 bin/agent-api-token.php create "Agent release" "status:read,deploy:preview,deploy:main" "<project_id>"
+/bin/php8.4-cli bin/agent-api-token.php create "Agent preview" "status:read,deploy:preview" "<project_id>"
+/bin/php8.4-cli bin/agent-api-token.php create "Agent release" "status:read,deploy:preview,deploy:main" "<project_id>"
 ```
 Le secret complet n'est affiché qu'une fois. Le stocker dans un gestionnaire de secrets sécurisé, jamais dans Git, un commit, un journal ou des instructions partagées. N'accorder `deploy:main` qu'aux agents explicitement habilités. Révoquer tout jeton exposé.
 
