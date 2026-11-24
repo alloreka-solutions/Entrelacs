@@ -1,6 +1,6 @@
-# EntreLacs — candidat adaptateur OpenCode SDK (E-OC-01)
+# EntreLacs — adaptateur OpenCode E-OC-01 et recrutement E-OC-02
 
-**Statut : DEVELOP candidat, non fusionné, non activé.** Aucun fournisseur, modèle ou tarif n'est présumé disponible. Ce module n'est ni un moteur de recrutement autonome, ni une fonctionnalité déjà raccordée à l'application PHP/SQLite.
+**État vérifié : E-OC-01 intégré dans `develop` le 24 novembre 2026** (PR #6, commit de fusion `bfb030eeaec115445e90724feefda7bfb7a02c05`). **E-OC-02 est une proposition de la PR issue #7, non fusionnée et non activée.** Aucun fournisseur, modèle ou tarif n'est présumé disponible. L'ensemble n'est ni un moteur de recrutement autonome, ni une fonctionnalité raccordée à l'application PHP/SQLite.
 
 ## Sources et périmètre
 
@@ -14,9 +14,10 @@ Depuis ce répertoire, avec Node.js déjà disponible :
 
 ```sh
 node --test bridge.test.mjs
+node --test recruitment.test.mjs
 ```
 
-Les tests utilisent un faux hôte doté des méthodes du SDK ; ils **n'importent pas** `@opencode/sdk`, ne contactent aucun fournisseur et ne créent ni session réelle ni environnement. Une mission manuelle retourne un prompt à transmettre par l'utilisateur.
+Les tests E-OC-01 utilisent un faux hôte ; ceux d’E-OC-02 utilisent un double strict des méthodes publiques du pont E-OC-01. **Aucun n’importe `@opencode/sdk`**, ne contacte de fournisseur ou ne crée de session réelle. Dans ce lot, **25 tests E-OC-02 ont été exécutés** ; les **25 tests E-OC-01** ont été conservés comme preuve antérieure, sans être rejoués. Une candidature manuelle produit un parcours de transfert humain, pas une connexion API.
 
 ## Contrat minimal du pilote
 
@@ -60,3 +61,31 @@ Commande dans le dossier déjà disponible : `node --test bridge.test.mjs` avec 
 ## Prochaine étape
 
 Comparer les résultats du faux adaptateur aux réponses manuelles de Dora, documenter les limites et choisir seulement ensuite un runtime déjà disponible pour une expérimentation OpenCode autorisée. Aucun abonnement, nouveau compte, déploiement ou collecte de secrets dans ce lot.
+
+
+## E-OC-02 — registre et coordination simulés (24 novembre 2026)
+
+**État : PR de développement, non intégrée ; sans installation, coût, activation ni donnée réelle.** Les deux nouveaux fichiers sont `recruitment.mjs` et `recruitment.test.mjs`. Le module est entièrement en mémoire et **n'importe ni OpenCode ni le pont E-OC-01** : ses fonctions de coordination reçoivent le pont en argument. Il n'appelle aucune méthode `sessions.*`, aucun serveur, aucun fournisseur et ne possède aucun accès à GitHub ou aux données réelles.
+
+### Parcours
+
+1. `createCandidateRegistry()` / `registerCandidate()` : registre versionné en mémoire et journal des propositions ; nom, fournisseur, modèle déclaré, provenance, mode `manuel`/`sdk`, rôles, capacités déclarées et limites. Aucune fiche n'est automatiquement recrutée ou activée.
+2. `recordSimulatedEvaluation()` : consigne une évaluation explicitement simulée avec observation et référence fictive ; **ne remplit jamais les capacités vérifiées**. Les simulations n'attestent pas qu'un fournisseur sait réellement exécuter une fonction.
+3. `evaluateCandidates()` / `proposePanelSelection()` : choix explicable par rôle, capacités, mode permis, exclusions et préférence facultative ; raisons d'exclusion lisibles. Le choix est **une affectation proposée**, pas une habilitation. Avec `requireVerified: true`, toute compétence seulement déclarée ou simulée est rejetée.
+4. `prepareCooperation()` : prépare un panel E-OC-01 au moyen des fonctions `proposeCandidate()` et `prepareReviewPanel()` injectées ; chaque créneau correspond à un candidat distinct. Dora peut participer en `manuel` mais **jamais comme agent SDK par déduction**.
+5. `collectIndependentContributions()` et `collectReviewsAndDossier()` : refusent les contributions manquantes, auteurs erronés, avis incomplets ou doublons ; réutilisent les fonctions E-OC-01 `recordContribution`, `prepareCrossReviews`, `recordCrossReview`, `prepareDecisionDossier`. Les sources et objections sont conservées, aucun vote ou consensus ne vaut décision humaine.
+
+### Exemple reproductible sans appel IA
+
+Le fichier `recruitment.test.mjs` fournit des fixtures **fictives** : un développeur en mode `sdk` simulé, « Dora déclarative » en mode `manuel` sans accès URL/terminal et un contradicteur manuel. Le moteur classe les candidatures par critères explicites, propose les affectations, reçoit des textes inventés et prépare des revues distinctes. Aucun de ces profils n’est réellement connecté.
+
+**Recette E-OC-02 effectivement exécutée** : `node --test recruitment.test.mjs` sous Node.js 22.16.0, **25/25 tests réussis** sur le nouveau parcours. E-OC-01 : **25/25 tests historiques acquis**, pas re-exécutés au cours de cette intervention. Les tests E-OC-02 utilisent un double de contrat pour éviter le chargement réel d'OpenCode ; **l'interopérabilité E-OC-01/E-OC-02 dans une session externe reste à vérifier** avant toute activation.
+
+### Règles de séparation
+
+- Candidature ≠ recrutement, qualification simulée ≠ compétence attestée, affectation proposée ≠ droit d'exécuter, avis ≠ décision humaine.
+- Ne pas transmettre de dossier privé, clé ou donnée personnelle à une IA externe. Les prompts d'agent restent un contexte à préparer et à transmettre seulement avec autorisation.
+- Ne pas instancier `createOpenCodeHost()` ni activer un fournisseur dans ce lot. Les règles de permissions simulées ne constituent pas un bac à sable.
+- Aucune migration, persistance SQLite, écriture de base métier, fusion automatique, publication, dépense ou modification d'IONOS.
+
+**Prochaine décision :** revue ciblée de la PR E-OC-02 pour une éventuelle intégration de code **inactif** dans `develop`. Une expérience SDK réelle serait une décision indépendante et ultérieure.
