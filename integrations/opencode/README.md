@@ -79,7 +79,7 @@ Comparer les résultats du faux adaptateur aux réponses manuelles de Dora, docu
 
 Le fichier `recruitment.test.mjs` fournit des fixtures **fictives** : un développeur en mode `sdk` simulé, « Dora déclarative » en mode `manuel` sans accès URL/terminal et un contradicteur manuel. Le moteur classe les candidatures par critères explicites, propose les affectations, reçoit des textes inventés et prépare des revues distinctes. Aucun de ces profils n’est réellement connecté.
 
-**Recette E-OC-02 effectivement exécutée** : `node --test recruitment.test.mjs` sous Node.js 22.16.0, **25/25 tests réussis** sur le nouveau parcours. E-OC-01 : **25/25 tests historiques acquis**, pas re-exécutés au cours de cette intervention. Les tests E-OC-02 utilisent un double de contrat pour éviter le chargement réel d'OpenCode ; **l'interopérabilité E-OC-01/E-OC-02 dans une session externe reste à vérifier** avant toute activation.
+**Recette E-OC-02 exécutée sur le lot initial** : `node --test recruitment.test.mjs` sous Node.js 22.16.0, **25/25 tests réussis** avec un double strict du contrat E-OC-01. Les **25/25 tests historiques E-OC-01** sont des preuves antérieures ; ils ne sont pas comptés parmi les tests réexécutés dans ce lot. L'interopérabilité avec un **hôte SDK externe** n'a pas été testée.
 
 ### Règles de séparation
 
@@ -89,3 +89,20 @@ Le fichier `recruitment.test.mjs` fournit des fixtures **fictives** : un dévelo
 - Aucune migration, persistance SQLite, écriture de base métier, fusion automatique, publication, dépense ou modification d'IONOS.
 
 **Prochaine décision :** revue ciblée de la PR E-OC-02 pour une éventuelle intégration de code **inactif** dans `develop`. Une expérience SDK réelle serait une décision indépendante et ultérieure.
+
+
+### Revue de compatibilité réelle E-OC-01 → E-OC-02 (PR #8, 24 novembre 2026)
+
+La recette ciblée supplémentaire charge **le véritable fichier `bridge.mjs` du commit E-OC-01 intégré dans `develop`** (blob Git `888858d5efc09c0c580bc7ea7c05f16609a8cc3e`) aux côtés du code E-OC-02 : aucun double n'est utilisé par `recruitment.integration.test.mjs`. Le chargement du module **n'appelle pas** `createOpenCodeHost()` et ne résout pas le paquet `@opencode/sdk` : il n'y a pas de fournisseur, serveur, appel externe ou droit d'accès créé.
+
+Depuis `integrations/opencode/`, avec Node.js déjà disponible :
+
+```sh
+node --test recruitment.test.mjs recruitment.integration.test.mjs
+```
+
+**Résultat exécuté : 33/33 tests E-OC-02 réussis** (25 initiaux et 8 de raccordement direct), sans installation, accès réseau, SDK réel ni donnée privée. Ces huit cas couvrent la chaîne réelle de trois rôles, quatre revues indépendantes, le panel minimal à deux, les refus de contribution/relecture incorrectes, le répertoire nécessaire pour les missions SDK fictives et l'identité de la mission. **Les 25 tests historiques E-OC-01 restent acquis, non rejoués** : ne pas annoncer 58 tests nouvellement exécutés.
+
+**Défaut fonctionnel reproduit et corrigé :** une affectation préparée pour la mission A pouvait auparavant être passée à `prepareCooperation()` avec un autre identifiant de mission B, ce qui dissociait la sélection de son dossier d'audit. Désormais `selection.id` doit correspondre à l'identifiant de mission demandé ; le cas négatif est couvert par `recruitment.integration.test.mjs`. Le test de répertoire E-OC-02 a été adapté pour utiliser son identifiant de mission réel, sans masquer ce contrôle historique.
+
+**Limite :** ce contrôle valide la compatibilité **de deux modules JavaScript réels**, pas les permissions d'un SDK OpenCode réel ni l'exécution autonome, les coûts, un stockage durable ou la sécurité d'un fournisseur. Le composant reste inactif, non fusionné et non publié.
