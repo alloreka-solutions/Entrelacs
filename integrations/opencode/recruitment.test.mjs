@@ -222,7 +222,7 @@ test('préparation des missions via pont E-OC-01 : aucun SDK ouvert', () => {
 });
 test('mission SDK sans répertoire refusée avant tout lancement', () => {
   const r = registry(), bridge = fakeBridge();
-  assert.throws(() => prepareCooperation({ registry: r, selection: plan(r), id: 'E',
+  assert.throws(() => prepareCooperation({ registry: r, selection: plan(r), id: 'PE-01-fictif',
     objective: 'Relecture', publicContext: 'fiche publique', bridge }), /répertoire/);
   assert.equal(bridge.calls.includes('sessions.create'), false);
 });
