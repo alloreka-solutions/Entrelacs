@@ -153,7 +153,7 @@ export function prepareCooperation({ registry, selection, id, objective, publicC
   validateBridge(bridge, ['proposeCandidate', 'prepareReviewPanel']);
   if (selection?.contract !== RECRUITMENT_CONTRACT ||
       selection.status !== 'affectation_proposée' || !nonEmpty(id) ||
-      !nonEmpty(objective) || !nonEmpty(publicContext)) {
+      selection.id !== id.trim() || !nonEmpty(objective) || !nonEmpty(publicContext)) {
     throw new TypeError('Sélection ou mission non préparée.');
   }
   const candidates = selection.selections.map((record) => {
